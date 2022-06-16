@@ -1,13 +1,28 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  let removed = /[\W_]/g
+  let lowerCaseString = word.toLowerCase().replace(removed, '')
+  let stringReversed = lowerCaseString.split('').reverse().join('')
+  if (stringReversed === lowerCaseString) {
+    return true
+  } else {
+    return false
+  }
 }
 
 /* 
-  Add your pseudocode here
+1. make sure everything in the string is a word.
+2. convert everything in the string to lowercase.
+3. split, reverse the string then put it back together
+4. compare the new reversed string to the one that was not reversed.
 */
 
 /*
-  Add written explanation of your solution here
+Removed replaces any non-word character and underscores with an empty string. for example $50.44 would be 5044($ and .)
+.toLowerCase converts everything in the string to lowercase.
+.replace(array, '') removes all the spaces in the array provided.
+.split('') converts the one string of words into individual strings of letters.
+.reverse() reverses the order of the elements in the string.
+.join() joins the elements into one string.
 */
 
 // You can run `node index.js` to view these console logs
